@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: rgb(4, 150, 155);
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  /* background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); */
+}
+
+.navvbar {
+  display: flex;
+  width: 100%;
+  top: 0;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 4rem;
+  backdrop-filter: blur(10px);
+}
+
+.navvbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.navvbar:hover::before {
+  left: 100%;
+}
+
+.navvbar .bagian-kiri-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navvbar .bagian-kiri-nav .text1-nav {
+  font-weight: 700;
+  color: #101010;
+  font-size: 1.35rem;
+}
+
+.navvbar .bagian-kiri-nav .text2-nav {
+  font-weight: 400;
+  color: #101010;
+  font-size: 1.15rem;
+}
+
+.navvbar .bagian-kiri-nav img {
+  width: 4rem;
+}
+
+.navvbar .bagian-kanan-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navvbar .bagian-kanan-nav a {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: aquamarine;
+  background-color: #101010;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#hamburger-menu-list {
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  display: none;
+}
+
+#hamburger-menu-list .ini {
+  background-color: beige;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  text-align: center;
+  color: #600303;
+  font-weight: bold;
+  font-size: larger;
+}
+
+/* Masuk Konten */
+
+.container {
+  display: flex;
+  width: 65%;
+  height: 32rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 1px #101010;
+  margin: 7rem auto;
+  padding: 1rem;
+}
+
+.container .content-kiri {
+    padding: 5rem 2rem;
+}
+
+.container .content-kanan {
+    padding: 2rem;
+}
+
+.container .content-kiri h2 {
+  margin-bottom: 1rem;
+}
+
+.container .content-kiri p {
+  text-align: justify;
+}
+
+.container .content-kiri .tombol {
+  margin: 1rem 1rem 0 0;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: aquamarine;
+  background-color: #101010;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.container .content-kiri .sosmed {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 1.5rem;
+}
+
+.container .content-kiri .sosmed a {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgb(54, 79, 79);
+  justify-content: center;
+  align-items: center;
+  background-color: #101010;
+  color: aquamarine;
+  border-radius: 50%;
+}
+
+.container .content-kanan .card-profile {
+  width: 18rem;
+  margin: 1.5rem auto;
+  box-shadow: 0 0 3px 0 #101010;
+  border-radius: 4%;
+  overflow: hidden;
+}
+
+.container .content-kanan .card-profile img {
+  width: 100%;
+  display: block;
+}
+
+.container .content-kanan .card-profile h3 {
+  text-align: center;
+}
+
+.container .content-kanan .card-profile p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* media query */
+/* Laptop */
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 85%;
+  }
+}
+/* Tablet */
+@media only screen and (max-width: 950px) {
+  html {
+    font-size: 75%;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    height: 50rem;
+    justify-content: center;
+  }
+
+  .container .content-kiri {
+    margin-top: -2rem;
+    padding-bottom: 0;
+  }
+
+  .container .content-kanan {
+    padding: .5rem auto;
+  }
+
+  .container .content-kanan .card-profile {
+    margin: 0;
+    width: 15rem;
+  }
+}
+
+/* untuk memunculkan hamburger menu */
+@media only screen and (max-width: 690px) {
+  .navvbar .bagian-kiri-nav .text1-nav {
+    display: none;
+  }
+
+  .navvbar .bagian-kiri-nav .text2-nav {
+    display: none;
+  }
+  
+  .navvbar .bagian-kanan-nav .tombol {
+    display: none;
+  }
+
+  #hamburger-menu {
+    display: block;
+  }
+
+  #hamburger-menu-list {
+  display: none;
+  }   
+
+  /* .navbar .active {
+    display: flex;
+  } */
+
+  .container {
+    padding-top: 0;
+    margin-top: 10rem;
+  }
+
+  .container .content-kiri {
+    padding-top: 2rem;
+  }
+}
+
+/* Handphone */
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 80%;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    width: 30rem;
+    height: 40rem;
+    justify-content: center;
+  }
+
+  .container .content-kanan .card-profile {
+    margin-top: -1rem;
+    width: 12rem;
+  }
+
+  .container .content-kiri {
+    padding-top: 3rem;
+    font-size: 90%;
+  }
+}
+

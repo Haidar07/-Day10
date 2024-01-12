@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Ch 1</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navvbar">
+        <div class="bagian-kiri-nav">
+          <img src="aset/logo-navbar.png" alt="Logo" />
+          <a href="#" class="text1-nav">Home</a>
+          <a href="myproject.html" target="_blank" class="text2-nav">My Project</a>
+          <a href="testimonial_oop.html" target="_blank" class="text2-nav">MyTestimonials</a>
+        </div>
+        <div class="bagian-kanan-nav">
+          <a href="contact_page.html" class="tombol" target="_blank">Contact</a>
+          <a href="javascript:void(0);" id="hamburger-menu" onclick="burger()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+      </div>
+      <div id="hamburger-menu-list">
+        <a href="index.html" class="ini">HOME</a>
+        <a href="myproject.html" class="ini">MyProject</a>
+        <a href="contact_page.html" class="ini">ContactMe</a>
+      </div>
+    </nav>
+
+    <!-- Bagian Konten -->
+    <div class="container">
+      <div class="content-kiri">
+        <h2>Hi, Welcome to my profile</h2>
+        <p>
+          My name is Haidar Fahkri Jauhar Fikri. I am a recent graduate in
+          Electrical Engineering from Muhammadiyah University of Semarang. My
+          most recent job was as a junior web developer at PT. Duta Solusi
+          Informatika. Nice to meet you.
+        </p>
+        <a href="contact_page.html" class="tombol" target="_blank">Contact</a>
+        <a href="aset/CV (1).pdf" target="_blank" class="cv"
+          >Download CV <i class="fa-regular fa-circle-down"></i
+        ></a>
+        <div class="sosmed">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="content-kanan">
+        <div class="card-profile">
+          <img src="aset/foto-profile.png" alt="Photo Profile" />
+          <h3>Haidar Fahkri Jauhar Fikri</h3>
+          <p>Fullstack Developer</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+  </body>
+</html>
