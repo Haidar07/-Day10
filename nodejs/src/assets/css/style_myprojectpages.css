@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e3e7eb;
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  /* background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); */
+}
+
+.navvbar {
+  display: flex;
+  width: 100%;
+  top: 0;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 4rem;
+  backdrop-filter: blur(10px);
+}
+
+.navvbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.navvbar:hover::before {
+  left: 100%;
+}
+
+.navvbar .bagian-kiri-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navvbar .bagian-kiri-nav .text1-nav {
+  font-weight: 700;
+  color: #101010;
+  font-size: 1.35rem;
+}
+
+.navvbar .bagian-kiri-nav .text2-nav {
+  font-weight: 400;
+  color: #101010;
+  font-size: 1.15rem;
+}
+
+.navvbar .bagian-kiri-nav img {
+  width: 4rem;
+}
+
+.navvbar .bagian-kanan-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navvbar .bagian-kanan-nav a {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: aquamarine;
+  background-color: #101010;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#hamburger-menu-list {
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  display: none;
+}
+
+#hamburger-menu-list .ini {
+  background-color: beige;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  text-align: center;
+  color: #600303;
+  font-weight: bold;
+  font-size: larger;
+}
+
+/* Bagian Form */
+form {
+  padding: 70px 500px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 100vh;
+}
+
+#jform {
+  font-weight: 700; 
+  margin-bottom: 2rem; 
+  text-align: center
+}
+
+.dateContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateField {
+  width: 48%; /* Sesuaikan lebar sesuai kebutuhan Anda */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bolder;
+}
+
+.input123 {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 3px black;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+button {
+  background-color: #000000;
+  color: aquamarine;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  float: right;
+  border-radius: 50px;
+}
+
+#tm {
+  width: 100%;
+  height: 4rem;
+  box-shadow: 0 0 3px black;
+  border-radius: 7px;
+}
+
+.checkboxContainer {
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 1rem;
+}
+
+.cb {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxContainer .cb input {
+  margin-right: 1rem;
+}
+
+.inputImg {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 7px;
+  box-shadow: 0 0 3px black;
+  margin-bottom: 2rem;
+}
+
+#inputGambar {
+  color: transparent;
+}
+
+.btnInput::-webkit-file-upload-button{
+  background-color: #e4e4e4;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Blog Section */
+.mainBlog {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+ #judul {
+  padding-top: 1rem;
+  text-align: center;
+ }
+
+.mainBlog p {
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.mainBlog .row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  gap: 4rem;
+  padding: 0 3rem;
+}
+
+.mainBlog .row .blog-card {
+  width: 17rem;
+  background-color: rgb(255, 255, 255);
+  padding: .5rem .5rem;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px 0 rgb(179, 179, 179);
+}
+
+.mainBlog .row .blog-card .blog-card-img {
+  width: 255px;
+  height: 210px; 
+  border-radius: 7px;
+}
+
+.mainBlog .row .blog-card .blog-card-title {
+  margin-top: .5rem;
+}
+
+.mainBlog .row .blog-card #durasi {
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+
+.mainBlog .row .blog-card #blog-card-article {
+  margin-bottom: 1rem;
+  width: 250px;
+  word-wrap: break-word;
+}
+
+.mainBlog .row .blog-card .icon-card {
+  width: 100%;
+  display: flex;
+  margin: 1rem 0 1rem;
+  gap: .5rem;
+}
+
+.mainBlog .row .blog-card .icon-card i {
+  font-size: 21px;
+}
+
+.mainBlog .row .blog-card .btn-card {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mainBlog .row .blog-card .btn-card button {
+  width: 130px;
+  border-radius: 10px;
+}
+
+/* media query */
+/* Laptop */
+@media only screen and (max-width: 1300px) {
+  html {
+    font-size: 80%;
+  }
+
+  form {
+  padding:5rem 2rem;
+  height: 100vh;
+  }
+
+  #jform {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 1.4rem;
+  }
+
+  .checkboxContainer {
+    font-size: 15px;
+  }
+
+  .mainBlog .row .blog-card {
+    width: 17rem;
+  }
+
+  .mainBlog .row .blog-card .blog-card-img {
+    width: 100%;
+  }
+
+  .mainBlog .row .blog-card #blog-card-article {
+    width: 100%;
+  }
+
+}
+
+
+/* Tablet */
+@media only screen and (max-width: 875px) {
+  html {
+    font-size: 72.5%;
+  }
+
+  .mainBlog .row .blog-card {
+    width: 17rem;
+  }
+}
+
+/* untuk memunculkan hamburger menu */
+@media only screen and (max-width: 690px) {
+  .navvbar .bagian-kiri-nav .text1-nav {
+    display: none;
+  }
+
+  .navvbar .bagian-kiri-nav .text2-nav {
+    display: none;
+  }
+  
+  .navvbar .bagian-kanan-nav .tombol {
+    display: none;
+  }
+
+  #hamburger-menu {
+    display: block;
+  }
+
+  #hamburger-menu-list {
+  display: none;
+  }   
+
+}
+
+/* Handphone */
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 65%;
+  }
+  .mainBlog .row {
+    justify-content: center;
+  }
+
+  .mainBlog .row .blog-card {
+    width: 65%;
+  }
+
+}

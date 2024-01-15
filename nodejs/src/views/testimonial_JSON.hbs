@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testi HoF</title>
+    <link rel="stylesheet" href="css/testimonial_2.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navvbar">
+        <div class="bagian-kiri-nav">
+          <img src="aset/logo-navbar.png" alt="Logo" />
+          <a href="testimonial_oop.html" target="_blank" onclick="console.log('Tombol Contact Diklik')" class="text1-nav">Testimonial OOP</a>
+          <a href="testimonial_HoF.html" target="_blank" class="text2-nav">Testimonial HoF</a>
+          <a href="#" class="text2-nav">Testimonial JSON</a>
+        </div>
+        <div class="bagian-kanan-nav">
+          <a href="contact_page.html" class="tombol" target="_blank">Contact</a>
+          <a href="javascript:void(0);" id="hamburger-menu" onclick="burger()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+      </div>
+      <div id="hamburger-menu-list">
+        <a href="index.html" class="ini">HOME</a>
+        <a href="myproject.html" class="ini">MyProject</a>
+        <a href="contact_page.html" class="ini">ContactMe</a>
+      </div>
+    </nav>
+
+    <!-- Testimonial Section With OOP Concept -->
+    <section id="main_container">
+        <h2>My Testimonial (With JSON Concept)</h2>
+        <div class="rating-star">
+          <button class="brs" onclick="allStar()">
+            ALL
+          </button>
+          <button class="brs" onclick="filteredTestimonials(1)">
+            1<i class="fa-solid fa-star"></i>
+          </button>
+          <button class="brs" onclick="filteredTestimonials(2)">
+            2<i class="fa-solid fa-star"></i>
+          </button>
+          <button class="brs" onclick="filteredTestimonials(3)">
+            3<i class="fa-solid fa-star"></i>
+          </button>
+          <button class="brs" onclick="filteredTestimonials(4)">
+            4<i class="fa-solid fa-star"></i>
+          </button>
+          <button class="brs" onclick="filteredTestimonials(5)">
+            5<i class="fa-solid fa-star"></i>
+          </button>
+        </div>
+        <div id="mantap" class="container_card">
+            <!-- <div class="card_testimonial">
+                <img src="aset/blog-2.jpg">
+                <p>"Lorem ipsum, dolor sit amet consectetur adipisicing."</p>
+                <p id="name">~ Haidar Fahkri JF</p>
+            </div> -->
+        </div>
+    </section>
+
+
+
+
+
+    <script src="js/nav.js"></script>
+    <script src="js/testimonialJSON.js"></script>
+    
+</body>
+</html>
