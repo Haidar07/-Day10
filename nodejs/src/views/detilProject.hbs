@@ -36,14 +36,14 @@
                         <a class="nav-link" href="/testi-OOP" target="_blank">My Testimonials</a>
                     </li>
                 </ul>
-                <a href="/contactMe" target="_blank" class="btn btn-outline-danger">contact Me</a>
+                <a href="/contactMe" target="_blank" class="btn rounded-pill text-bg-danger">contact Me</a>
             </div>
         </div>
     </nav>
 
     <!-- Detil Section -->
     <section class="w-100">
-        <h1 class="text-center my-5">{{ id }}</h1>
+        <h1 class="text-center my-5">{{data.nameProject}}</h1>
         <div class="d-flex w-auto justify-content-center">
             <div class="px-3 py-3 w-50">
                 <div class="w-100">
@@ -55,41 +55,28 @@
                     <h3 class="mb-3 fs-3">Duration</h3>
                     <div>
                         <i class="fa-regular fa-calendar-days"></i>
-                        <label for="">7 Jan 2024 - 7 Feb 2024</label>
+                        <label for="">{{data.startDate}} - {{data.endDate}}</label>
                     </div>
                     <div>
                         <i class="fa-solid fa-clock"></i>
-                        <label for="">1 Month</label>
+                        <label for="">{{data.duration}} days</label>
                     </div>
-                    <h3 class="mb-3 mt-5 fs-3">Technologies</h3>
+                    <h3 class="mb-3 mt-5 fs-3">Technologies</h3>           
                     <div class="d-flex gap-4">
                         <div>
-                            <div class="">
-                                <i class="fa-brands fa-react"></i>
-                                <label for="">React JS</label>
-                            </div>
-                            <div class="">
-                                <i class="fa-brands fa-node-js"></i>
-                                <label for="">Node JS</label>
-                            </div>
+                            <div class="">{{#if data.nodejs}} <i class="fa-brands fa-node-js"></i>  Node Js {{/if}}</div>
+                            <div class="">{{#if data.reactjs}} <i class="fa-brands fa-react"></i>  React Js{{/if}}</div>
                         </div>
                         <div>
-                            <div class="">
-                                <i class="fa-brands fa-js"></i>
-                                <label for="">JavaScript</label>
-                            </div>
-                            <div class="">
-                                <i class="fa-brands fa-vuejs"></i>
-                                <label for="">Vue JS</label>
-                            </div>
+                            <div class="">{{#if data.angular}}<i class="fa-brands fa-angular"></i>  Angular {{/if}}</div>
+                            <div class="">{{#if data.vuejs}}<i class="fa-brands fa-vuejs"></i>  Vue Js{{/if}}</div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
         <div class="d-flex w-75 mx-auto my-5">
-            <p class="w-100" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, vel non earum magnam fugiat consequatur facilis vero ea sint modi, optio repellat dolorem tenetur perspiciatis ducimus quam fugit qui! Omnis eius nesciunt minima quasi vel neque laborum odio aperiam assumenda iusto eos veritatis eligendi, maxime at laboriosam velit consequuntur ea aspernatur ullam quam a ipsa, nam necessitatibus maiores. Unde minima consequuntur optio ullam nostrum voluptatum esse praesentium rerum ipsum inventore ipsam, excepturi voluptate ducimus veniam quo sequi cupiditate ea illum similique doloremque repellendus accusantium itaque. Commodi ab magnam, dolorem fugiat ipsa magni temporibus? Optio dolorem aliquam officia modi ut, exercitationem iusto illo repellat atque possimus eligendi quaerat saepe, neque inventore repellendus nemo perspiciatis ullam praesentium odit laborum facilis architecto sint! Doloremque veritatis, aut quas quaerat molestiae aperiam labore corporis nostrum esse, rerum facere quia, ratione expedita quasi ex harum iste voluptate quo doloribus ullam ab! Quam corrupti quasi earum dicta quae rerum velit dignissimos nam quibusdam qui, ducimus animi, repudiandae recusandae nemo praesentium. Animi pariatur facilis ducimus eius deleniti doloremque necessitatibus velit ut veniam unde dolorum, quae veritatis cupiditate officia deserunt assumenda hic explicabo reiciendis aliquid, soluta error voluptatem! Maiores nisi amet voluptatibus? Debitis aut ratione corporis nisi optio iure sed cum dolor tempora odit quam quae, eaque iste, facere vel doloremque, eligendi ducimus! Illum obcaecati, harum architecto adipisci nesciunt vel, quibusdam nostrum et ex impedit nulla iure ipsam sint cum recusandae beatae tempore! Nemo aspernatur voluptatibus nobis quos corporis, nesciunt aperiam eligendi sed accusantium animi? Culpa hic fugit molestias voluptas, non in quaerat quo laudantium saepe vel qui, quas atque deleniti corporis beatae at eligendi maiores illo, dolore veritatis? Commodi optio ad, rem distinctio fugiat, ullam nisi animi vel repellat quam, enim deserunt illum iure aperiam deleniti qui nulla quis voluptate! Aperiam, perspiciatis et incidunt voluptatem optio doloribus possimus quaerat fugit ipsa minus eum ullam facere autem maiores, omnis sapiente dicta expedita laudantium! Quo, eligendi. At laboriosam, commodi hic amet molestiae rerum culpa iusto soluta quis velit quibusdam, corporis, voluptate impedit! Cupiditate nam nesciunt tenetur atque debitis ipsam nihil dicta aliquid! Quam eaque earum ducimus, expedita cum incidunt fuga tenetur nesciunt quibusdam voluptatum praesentium beatae nobis? Quos reiciendis dolore hic praesentium, eos tempore natus vitae quibusdam corrupti incidunt accusamus ipsam. Voluptas voluptatem iure aperiam debitis ad possimus ipsum, vitae aliquid accusantium eos enim adipisci. Possimus repellat molestias at voluptatem officia, laborum exercitationem facere ullam tenetur. Vitae assumenda sapiente commodi quibusdam ducimus nobis sunt neque aliquid sequi. Sequi numquam dolor officia ea ratione. Dolorum omnis, doloremque libero excepturi modi sapiente illum eos distinctio sint tempore nesciunt fugit rerum officia possimus natus at voluptates reprehenderit est laboriosam impedit? Eum a ducimus veritatis sapiente quis ratione porro nobis dolorum non nemo explicabo officia ea suscipit beatae, unde quas provident cupiditate maxime laboriosam reiciendis enim velit numquam, ut aut. Dolores illum, enim facilis ipsum neque similique iure adipisci doloremque inventore autem quod nulla numquam, quis qui quos earum aperiam sapiente hic atque iusto sed. Esse, quae. Delectus quisquam cumque aperiam libero suscipit praesentium ad maxime, illo, minima, vero consequatur eius et exercitationem tempora dignissimos sapiente maiores officiis ea impedit corrupti rem quod repellendus? Sit natus quas esse quaerat assumenda dicta culpa alias tempore in deserunt cum facere tenetur obcaecati dignissimos adipisci iste, ex ipsam minima delectus dolore, corporis enim recusandae voluptate? Debitis pariatur accusamus magnam ducimus architecto harum nisi repellat, omnis, reprehenderit perferendis neque nam suscipit praesentium cum. Quos ratione asperiores laborum autem illum minima veniam quae qui, hic exercitationem accusantium, eius quis animi. Totam, quos. Deleniti amet, optio distinctio culpa cum dignissimos illo obcaecati modi quis facilis facere ea voluptatum. Sed illum maiores voluptates voluptatibus accusantium aliquid hic consequuntur, sint omnis temporibus tenetur ad sit saepe libero nihil dolor incidunt, consequatur soluta, id tempora explicabo expedita vitae. Aliquam, sit sequi, quisquam omnis facilis, aspernatur impedit molestias ullam saepe consectetur distinctio? Delectus, ipsam cum nostrum ea, exercitationem eos impedit nisi rerum sed odit sequi explicabo magni sit architecto saepe assumenda tempore iure mollitia repellat voluptatibus deleniti id necessitatibus velit. Facilis molestiae impedit libero quasi inventore magnam laborum excepturi commodi magni officia et ratione possimus odio, aut enim eum rerum. Laboriosam quas exercitationem explicabo dolorum fugit dolore ipsum culpa ratione sint, quia corporis et!</p>
+            <p class="w-100" style="text-align: justify;">{{data.description}}</p>
         </div>
     </section>
 
