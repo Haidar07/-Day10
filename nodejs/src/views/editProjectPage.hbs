@@ -41,55 +41,56 @@
   </nav>
 
   <!-- Form Section -->
-  <form class="mt-4 w-25 mx-auto" action="/addProject" method="post">
+  <form class="mt-4 w-25 mx-auto" action="/editProject/{{blogs.id}}" method="post">
     <h2 class="text-center mb-5">Edit Project</h2>
     <div class="form-floating mb-3">
-      <input type="text" class="form-control shadow" id="nameProject" value="{{ data.nameProject }}" name="nameProject" />
+      <input type="text" class="form-control shadow" id="nameProject" value="{{ blogs.title }}" name="nameProject" />
       <label for="floatingInput">Name Project</label>
     </div>
     <div class="row mb-3">
       <div class="col">
         <label for="startDate" class="form-label">Start Date</label>
-        <input type="date" id="startDate" value ="{{ data.startDate }}" name="startDate" class="form-control shadow">
+        {{ blogs.startDate }}
+        <input type="date" id="startDate" value ="{{ blogs.startDate }}" name="startDate" class="form-control shadow">
       </div>
       <div class="col">
         <label for="endDate" class="form-label">End Date</label>
-        <input type="date" id="endDate" value="{{ data.endDate }}" name="endDate" class="shadow form-control" >
+        <input type="date" id="endDate" value="{{ blogs.endDate }}" name="endDate" class="shadow form-control" >
       </div>
     </div>
     <div class="form-floating">
       <textarea class="shadow form-control mb-3" id="description" name="description"
-        style="height: 100px">{{ data.description }}</textarea>
+        style="height: 100px">{{ blogs.content }}</textarea>
       <label for="description">Description</label>
     </div>
     <div class="checkbox-group d-flex gap-4">
       <div class="checkbox-left">
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="nodejs" name="nodejs" {{#if data.nodejs}}checked{{/if}} />
+          <input type="checkbox" class="shadow form-check-input" id="nodejs" name="nodejs" {{#if blogs.nodeJs}}checked{{/if}} />
           <label class="form-check-label" for="nodejs">Node JS</label>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="reactjs" name="reactjs" {{#if data.reactjs}}checked{{/if}} />
+          <input type="checkbox" class="shadow form-check-input" id="reactjs" name="reactjs" {{#if blogs.reactJs}}checked{{/if}} />
           <label class="form-check-label" for="reactjs">React JS</label>
         </div>
       </div>
       <div class="checkbox-right">
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="angular" name="angular" {{#if data.angular}}checked{{/if}} />
+          <input type="checkbox" class="shadow form-check-input" id="angular" name="angular" {{#if blogs.angular}}checked{{/if}} />
           <label class="form-check-label" for="angular">Angular</label>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="vuejs" name="vuejs" / {{#if data.vuejs}}checked{{/if}} />
+          <input type="checkbox" class="shadow form-check-input" id="vuejs" name="vuejs" / {{#if blogs.vueJs}}checked{{/if}} />
           <label class="form-check-label" for="vuejs">Vue JS</label>
         </div>
       </div>
 
     </div>
     <div class="input-group mb-3">
-      <input type="file" class="shadow form-control" value="{{ data.inputGambar }}" id="inputGambar" name="inputGambar" />
+      <input type="file" class="shadow form-control" value="{{ blogs.inputGambar }}" id="inputGambar" name="inputGambar" />
     </div>
     <div class="d-flex justify-content-end">
-      <button type="submit" class="shadow btn btn-primary">Submit</button>
+      <button type="submit" class="shadow btn btn-primary">Edit</button>
     </div>
   </form>
 

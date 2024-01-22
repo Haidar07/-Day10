@@ -85,6 +85,47 @@
     </div>
     </div>
 
+     <!-- Generate Card Section -->
+  <section class="mainBlog px-4 mt-5 mb-4 bg-body">
+    <h3 class="text-center mb-4">MY PROJECT</h3>
+    <div class="d-flex gap-5 flex-wrap">
+      {{#each blogs}}
+      <div class="card shadow" style="width: 16rem;">
+        <a href="/detilProject/{{this.id}}" target="_blank">
+          <img src="../assets/image/blog-1.jpg" class="card-img-top" />
+          {{!-- <img src="{{this.inputGambar}}" class="card-img-top" /> --}}
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"><a href="/detilProject/{{this.id}}" target="_blank" class="text-decoration-none text-dark-emphasis">{{this.title}}</a></h5>
+          <p>Durasi : {{this.duration}} days</p>
+          <p class="card-text text-truncate">{{this.content}}</p>
+          <div class="d-flex gap-2">
+            
+            {{#if this.nodeJs}}
+              <i class="fa-brands fa-node-js"></i>
+            {{/if}}
+            {{#if this.reactJs}}
+              <i class="fa-brands fa-react"></i>
+            {{/if}}
+            {{#if this.angular}}
+              <i class="fa-brands fa-angular"></i>
+            {{/if}}
+            {{#if this.vueJs}}
+              <i class="fa-brands fa-vuejs"></i>
+            {{/if}}
+          </div>
+          <div class="btn d-flex justify-content-center mt-2 gap-3">
+            <a href="/editProjectPage/{{this.id}}" class="btn btn-danger" style="width:5rem; height:3rem;">Edit</a>
+            <a href="/deleteProject/{{this.id}}" class="btn btn-danger" style="width:5rem; height:3rem;">Delete</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+
+
+    </div>
+  </section>
+
 
 
 
