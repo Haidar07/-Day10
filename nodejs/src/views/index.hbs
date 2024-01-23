@@ -29,20 +29,41 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
+                    {{#if isLogin}}
                     <li class="nav-item">
                         <a class="nav-link" href="/addProject" target="_blank">Add Project</a>
                     </li>
+                    {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="/addProject" target="_blank">Add Project</a>
+                    </li>
+                    {{/if}}
                     <li class="nav-item">
                         <a class="nav-link" href="/testi-OOP" target="_blank">My Testimonials</a>
                     </li>
                 </ul>
+                {{#if isLogin}}
+                    <a class="nav-link me-3 text-success">Hello, {{  user }}</a>
+                    <a class="nav-link me-3 text-warning" href="/logout">Log Out</a>               
+                {{else}}
+                    <a href="/registerPage" class="nav-link me-3 text-light" >Register</a>
+                    <a class="nav-link me-3 text-light" href="/loginPage">Login</a>               
+                {{/if}}
                 <a href="/contactMe" target="_blank" class="btn rounded-pill text-bg-danger">contact Me</a>
             </div>
         </div>
     </nav>
 
+
     <!-- Main Content -->
     <div class="p-5">
+        {{#if messages.success}}
+            <div class="alert alert-success" role="alert">
+                <div class="container d-flex justify-content-center">
+                    {{messages.success}}
+                </div>
+            </div>
+            {{/if}}
         <div class="card mb-3 mx-auto mt-5" style="max-width: 54rem;">
             <div class="row g-0">
                 <div class="col-md-4 px-4 py-4">
@@ -115,8 +136,10 @@
             {{/if}}
           </div>
           <div class="btn d-flex justify-content-center mt-2 gap-3">
+            {{#if isLogin}}
             <a href="/editProjectPage/{{this.id}}" class="btn btn-danger" style="width:5rem; height:3rem;">Edit</a>
             <a href="/deleteProject/{{this.id}}" class="btn btn-danger" style="width:5rem; height:3rem;">Delete</a>
+            {{/if}}
           </div>
         </div>
       </div>

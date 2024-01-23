@@ -6,12 +6,27 @@ const { Sequelize, QueryTypes, where } = require(`sequelize`)
 const moment = require('moment')
 // const { SELECT } = require('sequelize/types/query-types')
 const SequelizePool = new Sequelize(development)
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const flash = require('express-flash');
 
 app.set('view engine', 'hbs')
 app.set('views', 'src/views')
 
 app.use(`/assets`, express.static(`src/assets`));
 app.use(express.urlencoded({ extended: false }));
+app.use(session({
+  cookie:{
+          httpOnly: true,
+          secure: false,
+          maxAge: 2 * 60 *60 * 1000
+        },
+  resave: false,
+  store: session.MemoryStore(),
+  secret: 'session_storage',
+  saveUninitialized: true
+}));
+app.use(flash());
 
 app.get('/', home);
 app.get('/addProject', addProject);
@@ -20,10 +35,16 @@ app.get('/contactMe', contactMe);
 app.get('/testi-OOP', testiOOP);
 app.get('/testimonial_HoF', testiHoF);
 app.get('/testimonial_JSON', testiJson);
-app.post('/addProject', postProject);
 app.get('/deleteProject/:id', deleteProject);
-app.get('/editProjectPage/:id', editProjectPage)
-app.post('/editProject/:id', postEditProject)
+app.get('/editProjectPage/:id', editProjectPage);
+app.get('/registerPage', registerPage);
+app.get('/loginPage', loginPage);
+app.get('/logout', logout);
+app.post('/addProject', postProject);
+app.post('/editProject/:id', postEditProject);
+app.post('/registerPage', postRegister);
+app.post('/loginPage', isLogin);
+
 
 // const data = [];
 
@@ -81,8 +102,16 @@ function testiJson(req, res) { res.render(`testimonial_JSON`); }
 async function home(req, res) {
   try {
     const blogs = await SequelizePool.query("SELECT * FROM blogs", { type: QueryTypes.SELECT });
-    console.log(blogs);
-    res.render('index', { blogs })
+    console.log("Nilai Sesi:", req.session.isLogin, req.session.user);
+    const data = blogs.map(res => ({
+      ...res, 
+      isLogin: req.session.isLogin,
+    }))
+    res.render('index', { 
+      blogs: data,
+      isLogin: req.session.isLogin,
+      user: req.session.user
+    })
   } catch (error) {
     throw error
   }
@@ -212,7 +241,67 @@ async function deleteProject(req, res) {
   }
 }
 
+async function registerPage(req, res) {
+  res.render('registerPage');
+}
 
+async function postRegister(req, res) {
+  try {
+    const { name, email, pass } = req.body
+    const salt = 10;
+    bcrypt.hash(pass, salt, async(err, hashPass) => {
+      await SequelizePool.query(`INSERT INTO users (
+        name, 
+        email, 
+        password, 
+        "createdAt", 
+        "updatedAt"
+        ) VALUES (
+        '${name}',
+        '${email}',
+        '${hashPass}',
+         NOW(),
+         NOW()
+        )
+        `)
+    })
+    res.redirect('/loginPage');
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+function loginPage(req, res) {
+  res.render('loginPage');
+}
+
+async function isLogin(req, res) {
+  try {
+    const { email, pass } = req.body;
+    const checkEmail = await SequelizePool.query(`SELECT * FROM users WHERE email = '${ email }'`, { type: QueryTypes.SELECT});
+    if (!checkEmail.length) res.redirect('/loginPage')
+    bcrypt.compare(pass, checkEmail[0].password, function(err, result) {
+        if (!result) {
+          req.flash('warning', 'Salah password ya`e')
+          res.redirect('/loginPage')
+        } else {
+          req.session.isLogin = true
+          req.session.user = checkEmail[0].name
+          req.flash('success', 'Account Confirmed :)')
+          res.redirect('/');
+        }
+    });
+
+    console.log(checkEmail);
+  } catch (error) {
+    throw error
+  } 
+}
+
+function logout(req, res) {
+  req.session.destroy();
+  res.redirect('/loginPage');
+}
 
 
 app.listen(port, () => {
