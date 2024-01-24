@@ -47,7 +47,7 @@
         <div class="d-flex w-auto justify-content-center">
             <div class="px-3 py-3 w-50">
                 <div class="w-100">
-                    <img src="../assets/image/blog-1.jpg" class="w-100">
+                    <img src="/uploads/{{blogs.images}}" class="w-100">
                 </div>
             </div>
             <div class="ps-5 py-3 w-25">
@@ -63,14 +63,12 @@
                     </div>
                     <h3 class="mb-3 mt-5 fs-3">Technologies</h3>           
                     <div class="d-flex gap-4">
-                        <div>
-                            <div class="">{{#if blogs.nodeJs}} <i class="fa-brands fa-node-js"></i>  Node Js {{/if}}</div>
-                            <div class="">{{#if blogs.reactJs}} <i class="fa-brands fa-react"></i>  React Js{{/if}}</div>
+                        {{#each blogs.tech}}
+                            <i class="fa-brands fa-{{this}}"></i>
+                        {{/each}}
                         </div>
-                        <div>
-                            <div class="">{{#if blogs.angular}}<i class="fa-brands fa-angular"></i>  Angular {{/if}}</div>
-                            <div class="">{{#if blogs.vueJs}}<i class="fa-brands fa-vuejs"></i>  Vue Js{{/if}}</div>
-                        </div>
+                    <h3 class="mb-3 mt-5 fs-3">Author</h3>
+                    <p>{{blogs.author}}</p>           
                     </div>
                 </div>
             </div>

@@ -43,11 +43,11 @@
                     </li>
                 </ul>
                 {{#if isLogin}}
-                    <a class="nav-link me-3 text-success">Hello, {{  user }}</a>
-                    <a class="nav-link me-3 text-warning" href="/logout">Log Out</a>               
+                <a class="nav-link me-3 text-success">Hello, {{ user }}</a>
+                <a class="nav-link me-3 text-warning" href="/logout">Log Out</a>
                 {{else}}
-                    <a href="/registerPage" class="nav-link me-3 text-light" >Register</a>
-                    <a class="nav-link me-3 text-light" href="/loginPage">Login</a>               
+                <a href="/registerPage" class="nav-link me-3 text-light">Register</a>
+                <a class="nav-link me-3 text-light" href="/loginPage">Login</a>
                 {{/if}}
                 <a href="/contactMe" target="_blank" class="btn rounded-pill text-bg-danger">contact Me</a>
             </div>
@@ -58,16 +58,16 @@
     <!-- Main Content -->
     <div class="p-5">
         {{#if messages.success}}
-            <div class="alert alert-success" role="alert">
-                <div class="container d-flex justify-content-center">
-                    {{messages.success}}
-                </div>
+        <div class="alert alert-success" role="alert">
+            <div class="container d-flex justify-content-center">
+                {{messages.success}}
             </div>
-            {{/if}}
+        </div>
+        {{/if}}
         <div class="card mb-3 mx-auto mt-5" style="max-width: 54rem;">
             <div class="row g-0">
                 <div class="col-md-4 px-4 py-4">
-                    <div class="card shadow" >
+                    <div class="card shadow">
                         <img src="../assets/image/foto-profile.png" class="img-fluid rounded-start">
                         <div class="card-body">
                             <h6 class="card-title text-center">Fullstack Developer</h6>
@@ -106,48 +106,41 @@
     </div>
     </div>
 
-     <!-- Generate Card Section -->
-  <section class="mainBlog px-4 mt-5 mb-4 bg-body">
-    <h3 class="text-center mb-4">MY PROJECT</h3>
-    <div class="d-flex gap-5 flex-wrap">
-      {{#each blogs}}
-      <div class="card shadow" style="width: 16rem;">
-        <a href="/detilProject/{{this.id}}" target="_blank">
-          <img src="../assets/image/blog-1.jpg" class="card-img-top" />
-          {{!-- <img src="{{this.inputGambar}}" class="card-img-top" /> --}}
-        </a>
-        <div class="card-body">
-          <h5 class="card-title"><a href="/detilProject/{{this.id}}" target="_blank" class="text-decoration-none text-dark-emphasis">{{this.title}}</a></h5>
-          <p>Durasi : {{this.duration}} days</p>
-          <p class="card-text text-truncate">{{this.content}}</p>
-          <div class="d-flex gap-2">
-            
-            {{#if this.nodeJs}}
-              <i class="fa-brands fa-node-js"></i>
-            {{/if}}
-            {{#if this.reactJs}}
-              <i class="fa-brands fa-react"></i>
-            {{/if}}
-            {{#if this.angular}}
-              <i class="fa-brands fa-angular"></i>
-            {{/if}}
-            {{#if this.vueJs}}
-              <i class="fa-brands fa-vuejs"></i>
-            {{/if}}
-          </div>
-          <div class="btn d-flex justify-content-center mt-2 gap-3">
-            {{#if isLogin}}
-            <a href="/editProjectPage/{{this.id}}" class="btn btn-danger" style="width:5rem; height:3rem;">Edit</a>
-            <a href="/deleteProject/{{this.id}}" class="btn btn-danger" style="width:5rem; height:3rem;">Delete</a>
-            {{/if}}
-          </div>
+    <!-- Generate Card Section -->
+    <section class="mainBlog px-4 mt-5 mb-4 bg-body">
+        <h3 class="text-center mb-4">MY PROJECT</h3>
+        <div class="d-flex gap-5 flex-wrap">
+            {{#each blogs}}
+            <div class="card shadow" style="width: 16rem;">
+                <a href="/detilProject/{{this.id}}" target="_blank">
+                    <img src="/uploads/{{this.images}}" class="card-img-top" />
+                    {{!-- <img src="{{this.inputGambar}}" class="card-img-top" /> --}}
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/detilProject/{{this.id}}" target="_blank"
+                            class="text-decoration-none text-dark-emphasis">{{this.title}}</a></h5>
+                    <p>Durasi : {{this.duration}} days | <span style="color: rgb(226, 43, 89);">{{this.author}}</span></p>
+                    <p class="card-text text-truncate">{{this.content}}</p>
+                    <div class="d-flex gap-2">
+                        {{#each this.tech}}
+                            <i class="fa-brands fa-{{this}}"></i>
+                        {{/each}}
+                    </div>
+                    <div class="btn d-flex justify-content-center mt-2 gap-3">
+                        {{#if isLogin}}
+                        <a href="/editProjectPage/{{this.id}}" class="btn btn-danger"
+                            style="width:5rem; height:3rem;">Edit</a>
+                        <a href="/deleteProject/{{this.id}}" class="btn btn-danger"
+                            style="width:5rem; height:3rem;">Delete</a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+
         </div>
-      </div>
-      {{/each}}
-
-
-    </div>
-  </section>
+    </section>
 
 
 

@@ -35,13 +35,17 @@
             <a class="nav-link" href="/testi-OOP" target="_blank">My Testimonials</a>
           </li>
         </ul>
+        {{#if isLogin}}
+          <a class="nav-link me-3 text-success">Hi {{ user }}</a>
+          <a class="nav-link me-3 text-warning" href="/logout">Log Out</a>
+        {{/if}}
         <a href="/contactMe" target="_blank" class="btn rounded-pill text-bg-danger">contact Me</a>
       </div>
     </div>
   </nav>
 
   <!-- Form Section -->
-  <form class="mt-4 w-25 mx-auto" action="/addProject" method="post">
+  <form class="mt-4 w-25 mx-auto" action="/addProject" method="post" enctype="multipart/form-data">
     <h2 class="text-center mb-5">Add Project</h2>
     <div class="form-floating mb-3">
       <input type="text" class="form-control shadow" id="nameProject" name="nameProject" placeholder="Your Name" />
@@ -65,21 +69,21 @@
     <div class="checkbox-group d-flex gap-4">
       <div class="checkbox-left">
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="nodejs" name="nodejs" />
+          <input type="checkbox" class="shadow form-check-input" id="nodejs" name="technologies" value="node-js" />
           <label class="form-check-label" for="nodejs">Node JS</label>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="reactjs" name="reactjs" />
+          <input type="checkbox" class="shadow form-check-input" id="reactjs" name="technologies" value="react" />
           <label class="form-check-label" for="reactjs">React JS</label>
         </div>
       </div>
       <div class="checkbox-right">
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="angular" name="angular" />
+          <input type="checkbox" class="shadow form-check-input" id="angular" name="technologies" value="angular" />
           <label class="form-check-label" for="angular">Angular</label>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="shadow form-check-input" id="vuejs" name="vuejs" />
+          <input type="checkbox" class="shadow form-check-input" id="vuejs" name="technologies" value="vuejs" />
           <label class="form-check-label" for="vuejs">Vue JS</label>
         </div>
       </div>
@@ -102,23 +106,24 @@
         <a href="/detilProject/7" target="_blank">
           <img src="../assets/image/blog-1.jpg" class="card-img-top" /> --}}
           {{!-- <img src="{{this.inputGambar}}" class="card-img-top" /> --}}
-        {{!-- </a> --}}
+          {{!-- </a> --}}
         {{!-- <div class="card-body">
-          <h5 class="card-title"><a href="/detilProject/{{@index}}" target="_blank" class="text-decoration-none text-dark-emphasis">{{this.title}}</a></h5>
+          <h5 class="card-title"><a href="/detilProject/{{@index}}" target="_blank"
+              class="text-decoration-none text-dark-emphasis">{{this.title}}</a></h5>
           <p>Durasi : {{this.duration}} days</p>
           <p class="card-text text-truncate">{{this.content}}</p>
           <div class="d-flex gap-2">
             {{#if this.nodeJs}}
-              <i class="fa-brands fa-node-js"></i>
+            <i class="fa-brands fa-node-js"></i>
             {{/if}}
             {{#if this.reactJs}}
-              <i class="fa-brands fa-react"></i>
+            <i class="fa-brands fa-react"></i>
             {{/if}}
             {{#if this.angular}}
-              <i class="fa-brands fa-angular"></i>
+            <i class="fa-brands fa-angular"></i>
             {{/if}}
             {{#if this.vueJs}}
-              <i class="fa-brands fa-vuejs"></i>
+            <i class="fa-brands fa-vuejs"></i>
             {{/if}}
           </div>
           <div class="btn d-flex justify-content-center mt-2 gap-3">
