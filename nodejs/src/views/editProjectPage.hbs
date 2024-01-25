@@ -41,7 +41,7 @@
   </nav>
 
   <!-- Form Section -->
-  <form class="mt-4 w-25 mx-auto" action="/editProject/{{blogs.id}}" method="post">
+  <form class="mt-4 w-25 mx-auto" action="/editProject/{{blogs.id}}" method="post" enctype="multipart/form-data">
     <h2 class="text-center mb-5">Edit Project</h2>
     <div class="form-floating mb-3">
       <input type="text" class="form-control shadow" id="nameProject" value="{{ blogs.title }}" name="nameProject" />
@@ -87,7 +87,7 @@
 
     </div>
     <div class="input-group mb-3">
-      <input type="file" class="shadow form-control" value="{{ blogs.inputGambar }}" id="inputGambar" name="inputGambar" />
+      <input type="file" class="shadow form-control" id="inputGambar" name="inputGambar" />
     </div>
     <div class="d-flex justify-content-end">
       <button type="submit" class="shadow btn btn-primary">Edit</button>

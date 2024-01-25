@@ -44,7 +44,7 @@ app.get('/registerPage', registerPage);
 app.get('/loginPage', loginPage);
 app.get('/logout', logout);
 app.post('/addProject', upload.single('inputGambar'), postProject);
-app.post('/editProject/:id', postEditProject);
+app.post('/editProject/:id', upload.single('inputGambar'), postEditProject);
 app.post('/registerPage', postRegister);
 app.post('/loginPage', isLogin);
 
@@ -296,12 +296,17 @@ async function postEditProject(req, res) {
     const oneDay = 24 * 60 * 60 * 1000;
     const selisih = Math.abs(calEndDate - calStartDate);
     const duration = Math.round(selisih / oneDay);
+
+    const author = req.session.idUser;
+    const image = req.file.filename
+
     const blogs = await SequelizePool.query(`UPDATE blogs SET 
         title       = '${nameProject}', 
         content     = '${description}', 
         "startDate" = '${startDate}',
         "endDate"   = '${endDate}',
         tech        = '{${technologies}}',
+        images      = '${image}',
         "updatedAt" =  NOW(), 
         duration   = '${duration}'
 
